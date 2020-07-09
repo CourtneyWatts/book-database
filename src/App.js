@@ -1,26 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { Switch, Route } from 'react-router-dom'
+import Header from './Components/Header'
+import Books from './Components/Books'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
+    <div className='App'>
+      <div className='small-screen-text d-flex-col text-center p-5'>
+        <p>Browser window is too small</p>
+        <p className='pt-4'>Please open on a desktop browser</p>
+        <p className='pt-4'>
+          {' '}
+          If you are using a desktop browser, please resize your browser window
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      </div>
+      <div className='database'>
+        <Header />
+        <Switch>
+          <Route
+            exact
+            path='/'
+            render={(routeProps) => <Books {...routeProps} />}
+          />
+          <Route
+            exact
+            path='/:num'
+            render={(routeProps) => <Books {...routeProps} />}
+          />
+        </Switch>
+      </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

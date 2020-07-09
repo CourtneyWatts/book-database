@@ -1,0 +1,19 @@
+.Book {
+  span {
+    font-weight: 800;
+    font-size: 14px;
+    color: rgb(98, 98, 98);
+  }
+  p {
+    margin: 0;
+    font-size: 16px;
+  }
+}
+.Books {
+  li {
+    padding: 10px 5px 15px 5px;
+  }
+  li:nth-child(even) {
+    background: lightgrey;
+  }
+}
