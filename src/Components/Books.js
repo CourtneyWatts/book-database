@@ -90,7 +90,7 @@ class Books extends Component {
 
   render() {
     const books = this.state.books.map((book) => {
-      return <Book {...book} />
+      return <Book {...book} key={book.id}/>
     })
 
     let active = parseInt(this.props.match.params.num || 1)
@@ -105,7 +105,7 @@ class Books extends Component {
     for (let number = startingPage; number <= endingPage; number++) {
       items.push(
         <Pagination.Item
-          onClick={number != active && this.goToPage}
+          onClick={number != active ? this.goToPage : undefined}
           key={number}
           active={number == active}
           style={{ width: '45px', textAlign: 'center' }}

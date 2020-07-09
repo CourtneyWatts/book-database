@@ -3,14 +3,14 @@ import ReactDOM from 'react-dom'
 import './index.css'
 import './App.scss'
 import App from './App'
-import { HashRouter } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom'
 
 import * as serviceWorker from './serviceWorker'
 
 ReactDOM.render(
-  <HashRouter>
+  <BrowserRouter>
     <App />
-  </HashRouter>,
+  </BrowserRouter>,
   document.getElementById('root')
 )
 
